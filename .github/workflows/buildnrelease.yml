@@ -1,6 +1,5 @@
 name: Build & Release
 
-
 on:
   push:
     branches:
@@ -21,21 +20,21 @@ jobs:
       run: |
         cd static/cv
         echo "LINE25 (BEFORE injecting version):"
-        cat cv-anoff.tex| head -n 25 | tail -n 1
-        git rev-list --abbrev-commit -1 HEAD cv-anoff.tex > .COMMIT_SHA
+        cat cv-lihs.tex| head -n 25 | tail -n 1
+        git rev-list --abbrev-commit -1 HEAD cv-lihs.tex > .COMMIT_SHA
         export COMMIT_SHA=$(cat .COMMIT_SHA)
-        sed -i.bak "s/\({git:\)[[:alnum:]]*\(}\)/\1"$COMMIT_SHA"\2/" cv-anoff.tex
-        cp cv-anoff.tex cv-anoff-print.tex
-        sed -i.bak "s/\([[:alnum:]]*documentclass\[\)\([[:alnum:]]*\)\(\]{friggeri-cv}.[[:alnum:]]*\)/\1print\2\3/" cv-anoff-print.tex
+        sed -i.bak "s/\({git:\)[[:alnum:]]*\(}\)/\1"$COMMIT_SHA"\2/" cv-lihs.tex
+        cp cv-lihs.tex cv-lihs-print.tex
+        sed -i.bak "s/\([[:alnum:]]*documentclass\[\)\([[:alnum:]]*\)\(\]{friggeri-cv}.[[:alnum:]]*\)/\1print\2\3/" cv-lihs-print.tex
         echo "LINE25 (AFTER injecting version):"
-        cat cv-anoff.tex| head -n 25 | tail -n 1
+        cat cv-lihs.tex| head -n 25 | tail -n 1
     - name: Upload modified tex
       uses: actions/upload-artifact@v3
       with:
         name: cv-tex
         path: |
-          static/cv/cv-anoff.tex
-          static/cv/cv-anoff-print.tex
+          static/cv/cv-lihs.tex
+          static/cv/cv-lihs-print.tex
         retention-days: 7
 
   build-cv:
@@ -53,18 +52,18 @@ jobs:
     - name: run LaTeX build (web)
       run: |
         cd static/cv
-        lualatex cv-anoff.tex
+        lualatex cv-lihs.tex
     - name: run LaTeX build (print)
       run: |
         cd static/cv
-        lualatex cv-anoff-print.tex
+        lualatex cv-lihs-print.tex
     - name: Upload modified tex
       uses: actions/upload-artifact@v3
       with:
         name: cv-pdf
         path: |
-          static/cv/cv-anoff.pdf
-          static/cv/cv-anoff-print.pdf
+          static/cv/cv-lihs.pdf
+          static/cv/cv-lihs-print.pdf
         retention-days: 7
 
   generate-page:
@@ -74,19 +73,11 @@ jobs:
       image: anoff/hugo-asciidoctor
     steps:
     - uses: actions/checkout@v2
-      with:
-        submodules: 'recursive'
     - name: Download generated CV
       uses: actions/download-artifact@v3
       with:
         name: cv-pdf
         path: static/
-    - name: hotfix theme
-      run: cp -R theme_fixes/** themes/bilberry-hugo-theme
-    - name: generate HTML
-      run: hugo --gc --minify -d _site --baseURL "https://anoff.io"
-    - name: disable Jekyll
-      run: touch _site/.nojekyll
     - name: add tar APK for running actions/cache@v3
       run: |
         apk add --no-cache tar

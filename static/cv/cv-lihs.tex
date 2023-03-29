@@ -1,0 +1,235 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Friggeri Resume/CV
+% Version 1.2 (3/5/15)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Adrien Friggeri (adrien@friggeri.net)
+% https://github.com/afriggeri/CV
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Modified 2017 by:
+% Andreas Offenhaeuser (http://anoff.io)
+% Now a LuaLateX template
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[]{friggeri-cv} % Add 'print' as an option into the square bracket to remove colors from this template for printing
+
+\begin{document}
+
+\header{michael}{lihs}{software engineer}{2023/03/01}
+
+%----------------------------------------------------------------------------------------
+%	SIDEBAR SECTION
+%----------------------------------------------------------------------------------------
+
+\begin{aside} % In the aside, each new line forces a line break
+\section{\color{red}contact}
+Tübingen, Germany
+\href{mailto:michael.lihs@mailbox.org}{michael.lihs@mailbox.org}
+\graytitle{web}{\href{http://lihsmi.ch}{lihsmi.ch}}
+\graytitle{github}{\href{https://github.com/michaellihs}{gh/michaellihs}}
+\graytitle{twitter}{\href{https://twitter.com/kaktusmimi}{@kaktusmimi}}
+\graytitle{linkedin}{\href{https://www.linkedin.com/in/michael-lihs}{michael-lihs}}
+\section{\color{red}languages}
+\graytitle{native}{german}
+\graytitle{professional}{english}
+\graytitle{beginner}{french}
+\section{\color{red}craftsmanship}
+Java, Golang, Python
+Terraform, Azure,
+Docker, Kubernetes
+Infrastructure as Code,
+Continuous Integration \& Delivery,
+Software Testing
+\section{\color{red}domains}
+Cloud Solutions,
+Backend Development,
+Automotive Software Development,
+Developer Experience,
+Agile Transformation
+\end{aside}
+
+%----------------------------------------------------------------------------------------
+%	WORK EXPERIENCE SECTION
+%----------------------------------------------------------------------------------------
+
+\section{\color{red}experience}
+
+%------------------------------------------------
+
+\begin{entrylist}
+\entry
+{2023--present}
+{Infrastructure consultant (client project)}
+{Thoughtworks, Stuttgart DE}
+{CI/CD toolchain for ADAS software. Pipeline migration from Jenkins to GitLab. GitLab runner setup with Kubernetes. Bazel build automation. Establishing core principles for CI/CD. Consulting for Developer Experience. Developer platform engineering.
+
+\skills{acquired skills}{Jenkins, GitLab CI, shell scripting, Docker, Bazel, Terraform, Helm, Continuous Integration}
+}
+\end{entrylist}
+\begin{entrylist}
+\entry
+{2022}
+{Infrastructure consultant (client project)}
+{Thoughtworks, Stuttgart DE}
+{Improving processes around managing the in-vehicle networking for a large German truck company. Developer journey for in-vehicle software development. Service-based in-vehicle communication. API platform for in-vehicle APIs.
+
+\skills{acquired skills}{CAN, some/ip, developer platforms, backstage, Python, pytest, XML, Autosar}
+}
+\end{entrylist}
+\begin{entrylist}
+\entry
+{2021}
+{Infrastructure consultant (client project)}
+{Thoughtworks, Stuttgart DE}
+{Analysis of the in-vehicle software development process for a large German truck company. Extensive recommendations for improved developer efficiency.
+
+\skills{acquired skills}{Value Stream Mapping, user interviews, Developer Experience, Team Toplogies}
+}
+\end{entrylist}
+\begin{entrylist}
+\entry
+{2021}
+{Infrastructure consultant (client project)}
+{Thoughtworks, Stuttgart DE}
+{Big data platform for ingesting vehicle data. Infrastructure management with Pulumi on Azure Cloud. Rest service development with Python / Flask.
+
+\skills{acquired skills}{Pulumi, Python, Azure Cloud, Azure DevOps pipelines, test automation with pytest, infrastructure testing}
+}
+\end{entrylist}
+\begin{entrylist}
+\entry
+{2020--2021}
+{Infrastructure consultant (client project)}
+{Thoughtworks, Stuttgart DE}
+{Web application for managing software packages for in-vehicle software. Backend development with Golang. Azure infrastructure automation with Terraform and Azure DevOps. CI/CD pipelines with Azure DevOps. Kubernetes deployments.
+
+\skills{acquired skills}{VueJS, Golang, Postgres, Terraform, Azure DevOps, Azure Cloud, Kubernetes, Helm}
+}
+\end{entrylist}
+\begin{entrylist}
+\entry
+{2019--2020}
+{Infrastructure consultant (client project)}
+{Thoughtworks, Stuttgart DE}
+{Building a large-scale development platform for in-vehicle software and backend services. End-2-end testing with HW-in-the-loop. Infrastructure deployment with Terraform on Azure. CI/CD pipelines on Azure DevOps. In-vehicle and cloud services with Golang. Consumer-driven contract tests.
+
+\skills{acquired skills}{Azure, Terraform, Azure DevOps, Azure Cloud, Kubernetes, Helm, Golang, nvidia Jetson, some/ip, Golang, ServerSpec, shell scripting, Pact, test automation, hardware-in-the-loop, Docker, Developer Experience}
+}
+\end{entrylist}
+\begin{entrylist}
+\entry
+{2016--2019}
+{DevOps Engineer}
+{Robert Bosch GmbH, Stuttgart DE}
+{CI/CD for the core services of the Bosch IoT Cloud. Cloud service management with BOSH. Container-as-a-service with Kubernetes.
+
+\skills{acquired skills}{Platform engineering, Cloud Foundry, Concourse, GitLab, Jenkins, Docker, Kubernetes, Java, Golang, Spring Boot, Groovy, Ansible, shell scripting, infrastructure testing, BOSH, Splunk, test-driven development}
+}
+\end{entrylist}
+\begin{entrylist}
+\entry
+{2015--2016}
+{E-Business Engineer}
+{Robert Bosch GmbH, Stuttgart DE}
+{Microservice development and CI/CD for connected vehicles.
+
+\skills{acquired skills}{Java, Jenkins, GitLab, Cloud Foundry, Spring Boot, RabbitMQ, Rest, Swagger, JIRA, Confluence, Linux system administration, Spark, Hadoop}
+}
+\end{entrylist}
+\begin{entrylist}
+\entry
+{2009-2015}
+{Web developer}
+{Punkt.de GmbH, Karlsruhe DE}
+{TYPO3 extension development with PHP. Infrastructure automation for the in-house data center. Deployment automatisation with Jenkins and GitLab.
+
+\skills{acquired skills}{PHP, Javascript, Ruby, Chef, Continuous Integration, BDD, TD, Scrum, FreeBSD system administration, MySQL, Apache solr}
+}
+\end{entrylist}
+\begin{entrylist}
+  \entry
+  {2006-2009}
+  {Web developer}
+  {Library of the University of Karlsruhe (KIT), DE}
+  {TCL/TK and PHP development for an in-house web framework and the KVK (Karlsruher virtueller Katalog).
+  
+  \skills{acquired skills}{TCL, PHP, software testing, SOAP, Linux basics}
+  }
+  \end{entrylist}
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION SECTION
+%----------------------------------------------------------------------------------------
+\section{\color{red}education}
+
+\begin{entrylist}
+
+\entry
+{2004--2012}
+{Diploma in Computer Sciences}
+{University of Karlsruhe (KIT), DE}
+{Specialisation in compiler engineering and database systems.
+}
+
+\entry
+{2001--2004}
+{Guitar Maker}
+{Der Gitarrenladen, Weingarten DE}
+{Learning to build acoustic guitars (steelstring and classical guitars). Became a "Gitarrenbau Geselle". Managed the shop IT, the website and the online shop.
+}
+\end{entrylist}
+
+%----------------------------------------------------------------------------------------
+%	Community work section
+%----------------------------------------------------------------------------------------
+
+\section{\color{red}community work}
+
+\begin{entrylist}
+  \entry
+  {2015 - today}
+  {\href{https://www.meetup.com/de-DE/devops-stuttgart/}{DevOps Stuttgart Meetup}}
+  {Organiser and frequent speaker}
+
+
+  \entry
+  {2023 - today}
+  {\href{https://www.meetup.com/de-DE/automotive-software-development/}{Automotive Software Development Stuttgart Meetup}}
+  {Founder and organiser}
+
+  \entry
+  {2013 - 2015}
+  {\href{https://www.meetup.com/de-DE/devops-karlsruhe/}{DevOps Karlsruhe Meetup}}
+  {Founder and frequent speaker}
+
+\end{entrylist}
+
+\section{\color{red}recent talks}
+
+\begin{entrylist}
+  \entry
+  {2021}
+  {\href{https://2021.baselone.ch/speech.html?id=A0482ED6-27CD-4C1A-8305-6C2492B54A8D}{Pipelines for infrastructure automation}}
+  {BaselOne 2021}
+
+
+  \entry
+  {2021}
+  {\href{https://eventyay.com/e/fa96ae2c/session/6763}{Trunk-based development}}
+  {FOSSASIA Summit 2021}
+
+  \entry
+  {2021}
+  {\href{https://youtu.be/8Rf_x6GNNiM}{Agile Threat Modeling}}
+  {Thoughtworks Meetup}
+
+\end{entrylist}
+
+\end{document}

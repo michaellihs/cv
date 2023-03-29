@@ -26,7 +26,6 @@
 \definecolor{orange}{HTML}{FDA333}
 \definecolor{purple}{HTML}{D3A4F9}
 \definecolor{red}{HTML}{FB4485}
-\definecolor{anoffred}{HTML}{CA0A37}
 \definecolor{blue}{HTML}{6CE0F1}
 
 \ifdefined\@cv@print
@@ -99,14 +98,14 @@
       \textpdfrender{
         TextRenderingMode=FillStroke,
         LineWidth=1pt,
-        FillColor=anoffred,
+        FillColor=red,
         StrokeColor=white,
       }{\bodyfont #1}
       \fontsize{50pt}{80pt}%
       \textpdfrender{
         TextRenderingMode=FillStroke,
         LineWidth=1pt,
-        FillColor=anoffred,
+        FillColor=red,
         StrokeColor=white,
       }{\bodyfont #2}
     };
@@ -119,7 +118,7 @@
       \else%
         \fontsize{6pt}{8pt}\color{header}%
         \thinfont version %
-        \fontsize{8pt}{12pt}\color{green}%
+        \fontsize{8pt}{12pt}\color{red}%
         \thinfont \StrSubstitute{#4}{git:}{}%
       \fi%
     };
@@ -231,10 +230,10 @@
 \RequirePackage[pdfnewwindow=true]{hyperref}
 \hypersetup{
     colorlinks=true,       
-    linkcolor=anoffred,          
-    citecolor=anoffred,        
-    filecolor=anoffred,      
-    urlcolor = anoffred}
+    linkcolor=red,          
+    citecolor=red,        
+    filecolor=red,      
+    urlcolor = red}
     
 % A fix for \href{}{} colors not working with fontspec
 \makeatletter

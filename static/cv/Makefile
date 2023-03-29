@@ -1,8 +1,8 @@
 .PHONY: pdf inject-git-version verify-git-clean clean commit
 
-COMMIT_SHA := $(shell git rev-list --abbrev-commit -1 HEAD cv-anoff.tex)
-FILE_TEX := ./cv-anoff.tex# latex filename
-FILE_PDF := ./cv-anoff.pdf# desired pdf filename
+COMMIT_SHA := $(shell git rev-list --abbrev-commit -1 HEAD cv-lihs.tex)
+FILE_TEX := ./cv-lihs.tex# latex filename
+FILE_PDF := ./cv-lihs.pdf# desired pdf filename
 FILE_OUT = $(shell echo ${FILE_TEX} | sed -e 's/\.tex/\.pdf/') # the (intermediate) file outputted by tex
 
 inject-git-version:
@@ -12,7 +12,7 @@ verify-git-clean:
 	git diff-index --quiet HEAD
 
 pdf:
-	docker run -v ${CURDIR}:/doc/ -t -i thomasweise/texlive lualatex.sh ${FILE_TEX}
+	docker run -v ${CURDIR}:/doc/ -t -i thomasweise/texlive xelatex.sh ${FILE_TEX}
 
 clean:
 	mv ${FILE_OUT} ${FILE_PDF}
