@@ -53,9 +53,11 @@ jobs:
       run: |
         cd static/cv
         lualatex cv-lihs.tex
+        lualatex cv-lihs.tex
     - name: run LaTeX build (print)
       run: |
         cd static/cv
+        lualatex cv-lihs-print.tex
         lualatex cv-lihs-print.tex
     - name: Upload modified tex
       uses: actions/upload-artifact@v3
