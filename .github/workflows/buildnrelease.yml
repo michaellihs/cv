@@ -72,10 +72,11 @@ jobs:
       with:
         repo_token: ${{ secrets.GITHUB_TOKEN }}
         file: static/cv/cv-lihs.pdf
-        asset_name: cv-michael-lihs.pdf
+        asset_name: cv-*.pdf
         tag: ${{ github.ref }}
         overwrite: true
         body: "Current CV of Michael Lihs"
+        file_glob: true
 
   # generate-page:
   #   needs: build-cv
