@@ -41,7 +41,7 @@ jobs:
     needs: prepare-cv
     runs-on: ubuntu-20.04
     container:
-      image: texlive/texlive
+      image: ghcr.io/michaellihs/texlive
     steps:
     - uses: actions/checkout@v2
     - name: Download modified tex
@@ -66,42 +66,41 @@ jobs:
           static/cv/cv-lihs-print.pdf
         retention-days: 7
 
-  generate-page:
-    needs: build-cv
-    runs-on: ubuntu-20.04
-    container:
-      image: anoff/hugo-asciidoctor
-    steps:
-    - uses: actions/checkout@v2
-    - name: Download generated CV
-      uses: actions/download-artifact@v3
-      with:
-        name: cv-pdf
-        path: static/
-    - name: add tar APK for running actions/cache@v3
-      run: |
-        apk add --no-cache tar
-        ls -ahl _site/
-    - name: Upload HTML
-      uses: actions/upload-artifact@v3
-      with:
-        name: website
-        path: _site/
-        retention-days: 7
+  # generate-page:
+  #   needs: build-cv
+  #   runs-on: ubuntu-20.04
+  #   container:
+  #     image: anoff/hugo-asciidoctor
+  #   steps:
+  #   - uses: actions/checkout@v2
+  #   - name: Download generated CV
+  #     uses: actions/download-artifact@v3
+  #     with:
+  #       name: cv-pdf
+  #   - name: add tar APK for running actions/cache@v3
+  #     run: |
+  #       apk add --no-cache tar
+  #       ls -ahl _site/
+  #   - name: Upload HTML
+  #     uses: actions/upload-artifact@v3
+  #     with:
+  #       name: website
+  #       path: _site/
+  #       retention-days: 7
 
-  deploy-page:
-    if: github.ref == 'refs/heads/source'
-    needs: generate-page
-    runs-on: ubuntu-20.04
-    steps:
-    - uses: actions/checkout@v2
-    - name: Download HTML
-      uses: actions/download-artifact@v3
-      with:
-        name: website
-        path: _site/
-    - name: Publish page
-      uses: JamesIves/github-pages-deploy-action@v4
-      with:
-        folder: _site
-        branch: master
+  # deploy-page:
+  #   if: github.ref == 'refs/heads/source'
+  #   needs: generate-page
+  #   runs-on: ubuntu-20.04
+  #   steps:
+  #   - uses: actions/checkout@v2
+  #   - name: Download HTML
+  #     uses: actions/download-artifact@v3
+  #     with:
+  #       name: website
+  #       path: _site/
+  #   - name: Publish page
+  #     uses: JamesIves/github-pages-deploy-action@v4
+  #     with:
+  #       folder: _site
+  #       branch: master
