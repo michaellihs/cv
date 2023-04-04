@@ -71,8 +71,7 @@ jobs:
       uses: svenstaro/upload-release-action@v2
       with:
         repo_token: ${{ secrets.GITHUB_TOKEN }}
-        file: static/cv/cv-lihs.pdf
-        asset_name: cv-*.pdf
+        file: static/cv/cv-*.pdf
         tag: ${{ github.ref }}
         overwrite: true
         body: "Current CV of Michael Lihs"
